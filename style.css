@@ -99,3 +99,33 @@
   18% { opacity:1; }
   100% { opacity:0; transform:rotate(var(--direction)) translateY(calc(-1 * var(--reach))) rotate(50deg) scale(.65); }
 }
+
+.credit-strip { background:#fff; border-block-end:1px solid var(--border); }
+footer .credit-strip { border-block:1px solid var(--border); }
+.credit-inner { width:min(1220px,calc(100% - 96px)); margin:auto; padding-block:9px;
+  display:flex; align-items:center; gap:1.6rem; }
+.credit-label { font-size:.71rem; letter-spacing:.12em; text-transform:uppercase; color:#665a61; }
+.credit-marks,.credit-org { display:flex; align-items:center; }
+.credit-marks { gap:1.4rem; }
+.credit-org { gap:.65rem; }
+.credit-org + .credit-org { border-inline-start:1px solid #dfd7cf; padding-inline-start:1.4rem; }
+.credit-org span,footer .credit-org span { color:#443944; font:600 .8rem/1.28 Arial,sans-serif; }
+.credit-logo { display:grid; place-items:center; flex:none; position:relative; width:57px; height:54px; }
+.credit-logo img { display:block; }
+.credit-logo.cyber img { position:absolute; width:129px; height:auto; max-width:none; }
+.credit-logo.osu img { width:auto; height:51px; }
+@media(max-width:900px) { .credit-inner { width:calc(100% - 48px); } }
+@media(max-width:700px) {
+  .credit-inner { width:calc(100% - 36px); flex-wrap:wrap; gap:4px 1rem; }
+  .credit-marks { gap:.6rem; }
+  .credit-org { gap:.35rem; }
+  .credit-org + .credit-org { padding-inline-start:.6rem; }
+  .credit-logo { width:43px; height:44px; }
+  .credit-logo.cyber img { width:99px; }
+  .credit-logo.osu img { height:40px; }
+  .credit-org span,footer .credit-org span { font-size:.72rem; }
+}
+@media(max-width:385px) {
+  .credit-label { flex-basis:100%; }
+  .credit-marks { flex-wrap:wrap; }
+}
