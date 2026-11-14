@@ -275,7 +275,7 @@ function chooseDemoSite(original) {
   $("#original-site").setAttribute("aria-pressed",String(original));
   $("#lookalike-site").setAttribute("aria-pressed",String(!original));
   $("#passkey-address").textContent = original ? "https://parcel.example/sign-in" : "https://parcel-login.example/sign-in";
-  $("#passkey-feedback").textContent = "Ready to try this website.";
+  $("#passkey-feedback").textContent = "";
   $("#passkey-feedback").classList.remove("verdict","round-in");
 }
 $("#original-site").onclick = () => chooseDemoSite(true);
