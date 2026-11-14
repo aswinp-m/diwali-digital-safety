@@ -59,7 +59,7 @@ const practice = {
     why: "An extra sticker could send you to a different site. Use the city's official app or the meter's built-in payment option."
   },
   shield: {
-    sender: "Family chat · unknown number", preview: "Hi Mum, new phone. Can you send money?",
+    sender: "Family chat · unknown number", preview: "Hi Mom, I’m using a friend’s phone. Can you send money?",
     prompt: "Choose the best way to check who sent this.",
     clues: ["Call their previously saved number", "Ask this account for a photo"],
     key: 0, hint: "A stranger might already have a family photo. Try a separate contact route.",
@@ -107,7 +107,7 @@ const scenarios = [
   ["Credit","lock","You type the official credit bureau’s address yourself and request a free security freeze.","Safe","Repeat this at all three bureaus. Keep your login details secure so you can lift the freeze for a credit application."],
   ["Sign-in","key","You open your email provider’s real app yourself and use a passkey to sign in.","Safe","A passkey is tied to the real service. Keep your device locked and check your account recovery options."],
   ["QR codes","qr","A QR sticker on a parking meter opens a payment page. You notice another code underneath it.","Scam warning","Skip the sticker. Find the city’s official parking app or use the meter’s built-in payment method."],
-  ["Family","shield","A cousin messages from a new number asking for money. You pause and call the number you already have saved.","Safe","Confirm the request through a route you already trust. If you cannot reach them, wait before sending money."]
+  ["Family","shield","Someone claiming to be your grandchild messages on WhatsApp asking for money. You pause and call the number you already have saved.","Safe","Confirm the request through a route you already trust. If you cannot reach them, wait before sending money."]
 ];
 const wheel = $("#wheel");
 scenarios.forEach(([name,glyph],i) => {
@@ -187,12 +187,12 @@ function spinWheel() {
 spinButton.onclick = hub.onclick = spinWheel;
 
 const questions = [
-  {q:"“Indian police” demand a video-call deposit to clear your name. What do you do?",a:["Stay on camera","Pay the deposit","Hang up and verify independently","Send your passport photo"],key:2,why:"End the call and talk to someone you trust. Use an official number you find yourself."},
+  {q:"“cops from a different country” demand a video-call deposit to clear your name. What do you do?",a:["Stay on camera","Pay the deposit","Hang up and verify independently","Send your passport photo"],key:2,why:"End the call and talk to someone you trust. Use an official number you find yourself."},
   {q:"A bank caller asks for a one-time code to stop fraud. What is the safest response?",a:["Read them the code","Hang up and call the number on your card","Share just the last digits","Approve the sign-in alert"],key:1,why:"A code can authorize access or a payment. Keep it private, even when the caller knows your name."},
   {q:"Which action freezes your US credit at all three major bureaus for free?",a:["Call your bank","Buy credit monitoring","Freeze only at Experian","Request a freeze separately at each bureau"],key:3,why:"Contact Equifax, Experian, and TransUnion. Placing or lifting a security freeze is free."},
   {q:"Which sign-in method is designed to resist fake login pages?",a:["A passkey","A reused password","A text code read to a caller","A security question"],key:0,why:"A passkey works with the site or app it was created for. A lookalike site cannot use it to sign you in."},
   {q:"A text says “Pay your toll today” and includes a link. How do you check?",a:["Pay the small fee","Reply with your plate number","Visit the toll agency’s official site yourself","Forward the link to family"],key:2,why:"Look up the toll agency independently. Use its real website or customer service number to check your balance."},
-  {q:"Your aunt’s WhatsApp account asks for urgent money. What should you do first?",a:["Send a small test payment","Call her using a number you already trust","Ask for her profile photo","Forward the request"],key:1,why:"Someone else may control her account. Confirm the request in a separate call before sending money."}
+  {q:"Someone claiming to be your grandchild reaches out on WhatsApp for urgent money. What should you do first?",a:["Send a small test payment","Call your grandchild using a number you already trust","Ask for a profile photo","Forward the request"],key:1,why:"Someone else may control the account or be pretending to be your grandchild. Confirm the request in a separate call before sending money."}
 ];
 const letters="ABCD";
 const quizDialog=$("#quiz-dialog"), quizBody=$("#quiz-content");
@@ -243,3 +243,46 @@ function beginQuiz(){
 }
 $("#start-quiz").onclick=beginQuiz;
 
+
+// Fictional domains are displayed as text, never opened.
+const peek = $("#peek-link");
+function revealDestination() {
+  $("#link-destination").textContent = "https://parcel.example.delivery-help.example/track";
+  $("#link-destination").classList.add("destination-visible");
+}
+peek.onmouseenter = revealDestination;
+peek.onfocus = revealDestination;
+peek.onclick = event => { event.preventDefault(); revealDestination(); };
+const domains = [
+  ["https://parcel.example/track", "The domain is parcel.example, matching the known carrier address in this exercise. Still confirm the request independently before sharing payment details."],
+  ["https://parcel.example.delivery-help.example/track", "The domain is delivery-help.example. The words parcel.example at the start are a subdomain controlled by that other site."],
+  ["https://delivery-help.example/parcel.example", "The domain is delivery-help.example. The carrier’s name appears only in the path after the slash."]
+];
+domains.forEach(([address,explanation],index) => {
+  const option = document.createElement("button");
+  option.className = "clue domain-option";
+  option.textContent = address;
+  option.onclick = () => {
+    $("#domain-feedback").textContent = explanation;
+    for (const item of $("#domain-options").children) item.classList.remove("found","try-again");
+    option.classList.add(index === 0 ? "found" : "try-again");
+  };
+  $("#domain-options").append(option);
+});
+let originalSite = true;
+function chooseDemoSite(original) {
+  originalSite = original;
+  $("#original-site").setAttribute("aria-pressed",String(original));
+  $("#lookalike-site").setAttribute("aria-pressed",String(!original));
+  $("#passkey-address").textContent = original ? "https://parcel.example/sign-in" : "https://parcel-login.example/sign-in";
+  $("#passkey-feedback").textContent = "Ready to try this website.";
+  $("#passkey-feedback").classList.remove("verdict","round-in");
+}
+$("#original-site").onclick = () => chooseDemoSite(true);
+$("#lookalike-site").onclick = () => chooseDemoSite(false);
+$("#try-passkey").onclick = () => {
+  $("#passkey-feedback").textContent = originalSite ?
+    "Domain matches → unlock with your device PIN, face, or fingerprint → the service verifies the signed proof. You’re signed in to the original service in this simulation." :
+    "Domain mismatch → the saved passkey is unavailable for this lookalike. Copying the logo or page design cannot make the original passkey work here.";
+  $("#passkey-feedback").classList.add("verdict","round-in");
+};

@@ -5,7 +5,7 @@ const topics = [
     icon: "phone",
     color: "peach",
     html: `
-      <p>A caller in uniform says Indian police found a parcel in your name. They order you to stay on video under “digital arrest” and send a deposit. <strong>End the call. You can hang up.</strong></p>
+      <p>A caller in uniform claims that cops from a different country found a parcel in your name. They order you to stay on video under “digital arrest” and send a deposit. <strong>End the call. You can hang up.</strong></p>
       <h3>Listen for the pressure</h3>
       <ul>
         <li>A supposed FBI agent wants you to transfer your savings for an investigation. An “IRS officer” demands gift cards to avoid arrest. Someone claiming to be from immigration threatens deportation unless you pay today. These are impersonation scams.</li>
@@ -13,7 +13,7 @@ const topics = [
         <li>Call a trusted relative. To check a real concern, look up the agency on its official website yourself. If you sent money, contact your bank immediately and ask whether it can stop or reverse the payment.</li>
       </ul>
       <div class="source-links">
-        <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2020570">India’s digital-arrest advisory</a>
+        <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2020570">Digital-arrest advisory</a>
         <a href="https://www.irs.gov/help/how-to-know-its-the-irs">Verify IRS contact</a>
         <a href="https://consumer.ftc.gov/consumer-alerts/2022/07/scammers-impersonate-us-immigration-officers">FTC immigration scam guide</a>
         <a href="https://www.ic3.gov/">Report online crime to the FBI</a>
@@ -28,7 +28,7 @@ const topics = [
       <p>Your “bank” calls about a suspicious transfer. A six-digit code arrives, and the caller says reading it aloud will cancel the payment. <strong>Keep the code private and hang up.</strong></p>
       <ul>
         <li>A one-time password (OTP) can authorize a login or transaction. Only enter it in the official app or site for an action you started. Call the number on your bank card to check your account.</li>
-        <li>A WhatsApp message from “your cousin” asks for urgent wedding money or a code to rejoin the family group. Call your cousin on a number you already had. Even a familiar account can be taken over.</li>
+        <li>A WhatsApp message from “your grandchild” asks for urgent money or a code to rejoin the family group. Call your grandchild on a number you already had. Even a familiar account can be taken over.</li>
         <li>If you shared a bank code, call the bank’s fraud team now. If someone used your WhatsApp account to ask for money, warn your contacts using another channel.</li>
       </ul>
       <div class="source-links">
