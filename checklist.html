@@ -6,62 +6,107 @@
 <meta name="theme-color" content="#fff9ee">
 <title>Family safety checklist · Diwali Digital Safety</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f7f0e4;color:#321d31;font:16px/1.5 system-ui,sans-serif}
-a{color:#85381e;text-decoration-thickness:.08em;text-underline-offset:.15em}a:hover{text-decoration-thickness:.14em}
+*{box-sizing:border-box}
+body{margin:0;background:#f7f0e4;color:#321d31;font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:#85381e;text-decoration-thickness:.08em;text-underline-offset:.15em}
+a:hover{text-decoration-thickness:.14em}
 :focus-visible{outline:3px solid #84461e;outline-offset:4px}
 nav,main{width:min(51rem,calc(100% - 2rem));margin:1.3rem auto}
 nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-nav a{font-weight:650}button{font:inherit;font-weight:650;color:white;background:#51223e;border:0;border-radius:2em;padding:.65em 1.1em;cursor:pointer}
+nav a{font-weight:650}
+button{font:inherit;font-weight:650;color:white;background:#51223e;border:0;border-radius:2em;padding:.65em 1.1em;cursor:pointer}
 main{padding:clamp(1.2rem,5vw,3.2rem);border:1px solid #dcccb6;border-radius:1.3rem;background:#fffcf6}
-header{padding-bottom:1.1rem;border-bottom:2px solid #cfad81}.brand{color:#78381e;font-size:.82em;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+header{padding-bottom:1.1rem;border-bottom:2px solid #cfad81}
+.brand{color:#78381e;font-size:.82em;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
 .flower{font-size:1.6em;vertical-align:-.06em;color:#a74725;margin-right:.24em}
-h1,h2{font-family:Georgia,serif;line-height:1.12}h1{font-size:clamp(2.25rem,5.3vw,3.4rem);margin:.27em 0 .12em;letter-spacing:-.04em}h2{font-size:1.45em;margin:1em 0 .38em}p{margin:0 0 .48em}
-.rows{list-style:none;margin:0;padding:0}.rows li{margin:.52em 0}.rows label{display:flex;align-items:baseline;gap:.65em;cursor:pointer}
-input{width:1em;height:1em;flex:none;margin:0;accent-color:#7a3e26}.bureaus,.reports{list-style:none;margin:.52em 0 0;padding:0}
+h1,h2{font-family:Georgia,"Times New Roman",serif;line-height:1.12}
+h1{font-size:clamp(2.25rem,5.3vw,3.4rem);margin:.27em 0 .12em;letter-spacing:-.04em}
+h2{font-size:1.45em;margin:1.1em 0 .35em}
+p{margin:0 0 .48em}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{padding:.72em 0;border-bottom:1px solid #e8ddcf}
+.rows li:last-child{border-bottom:0}
+.rows label{display:flex;align-items:flex-start;gap:.8em;cursor:pointer}
+.rows input{width:1.1em;height:1.1em;flex:none;margin:.27em 0 0;accent-color:#7a3e26}
+.task{display:block;font-weight:650;line-height:1.35}
+.detail{display:block;margin-top:.2em;color:#5c515c;font-size:.91em;line-height:1.45}
+.bureaus,.reports{list-style:none;margin:.55em 0 0;padding:0}
+.bureaus li,.reports li{margin:.25em 0}
 .bureaus a,.reports a{overflow-wrap:anywhere}
-.action{margin-top:1rem;border-left:3px solid #a44624;padding:.1em 1em .45em;background:#f8f0e0}.action h2{margin:.45em 0 .35em}
+.action{margin-top:1.1rem;border-left:3px solid #a44624;padding:.1em 1em .55em;background:#f8f0e0}
+.action h2{margin:.5em 0 .4em}
+.links-heading{font-weight:650;margin-top:.75em}
 footer{border-top:1px solid #cdba9f;margin-top:1.3em;padding-top:.7em;color:#564958;font-size:.85em}
 @page{size:letter portrait;margin:.52in .63in}
 @media print{
-html,body,main{background:white;color:#211621}body{font:11pt/1.29 Arial,sans-serif}nav{display:none}main{width:auto;margin:0;padding:0;border:0;border-radius:0}header{padding-bottom:8pt}.brand{font-size:9pt}.flower{font-size:16pt}
-h1{font-size:30pt}h2{font-size:16pt;margin:11pt 0 4pt}.rows li{margin:4pt 0}.rows label{gap:6pt}input{width:10pt;height:10pt}
-a{color:#211621;text-decoration:none}.action{background:white;margin-top:10pt;padding:1pt 0 2pt 9pt}.bureaus,.reports{margin:4pt 0}section{break-inside:avoid}footer{margin-top:9pt;padding-top:5pt;font-size:9pt}
+  html,body,main{background:white;color:#211621}
+  body{font:10.5pt/1.26 Arial,sans-serif}
+  nav{display:none}
+  main{width:auto;margin:0;padding:0;border:0;border-radius:0}
+  header{padding-bottom:8pt}
+  .brand{font-size:9pt}
+  .flower{font-size:16pt}
+  h1{font-size:28pt}
+  h2{font-size:15pt;margin:10pt 0 4pt}
+  .rows li{padding:4pt 0}
+  .rows label{gap:7pt}
+  .rows input{width:10pt;height:10pt;margin-top:2pt}
+  .task{font-weight:700}
+  .detail{font-size:9.5pt;color:#444;margin-top:1pt}
+  a{color:#211621;text-decoration:none}
+  .action{background:white;margin-top:9pt;padding:1pt 0 2pt 9pt}
+  .bureaus,.reports{margin:4pt 0}
+  .bureaus li,.reports li{margin:2pt 0}
+  section{break-inside:avoid}
+  footer{margin-top:9pt;padding-top:5pt;font-size:9pt}
 }
 @media(max-width:370px){nav{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
-<nav aria-label="Checklist actions"><a href="index.html#guide">← Back to guide</a><button type="button" onclick="window.print()">Print or save PDF</button></nav>
+<nav aria-label="Checklist actions">
+  <a href="index.html#guide">← Back to guide</a>
+  <button type="button" onclick="window.print()">Print or save PDF</button>
+</nav>
 <main>
-<header><div class="brand"><span class="flower" aria-hidden="true">✿</span> Diwali Digital Safety</div><h1>Family safety checklist</h1><p>A few things you can do today to help keep your family safe.</p></header>
-<section>
-<h2>Someone is rushing you. What now?</h2>
-<ul class="rows">
-<li><label><input type="checkbox"><span><strong>It’s OK to hang up.</strong> If someone claims to be the FBI, IRS, immigration or cops from a different country and threatens you with arrest, end the call. A badge or uniform on a video call doesn’t prove who they are. Find the agency’s number on its official website and call back.</span></label></li>
-<li><label><input type="checkbox"><span><strong>Keep your login codes to yourself.</strong> Don’t read a bank or WhatsApp code to someone who calls or messages you. If a sign-in request appears and you weren’t signing in, decline it.</span></label></li>
-<li><label><input type="checkbox"><span><strong>Check with your family first.</strong> A message from a grandchild asking for money might be from someone else. Call the number you already have saved, even if the message says they’re using a friend’s phone.</span></label></li>
-<li><label><input type="checkbox"><span><strong>Check before you pay.</strong> Got a delivery fee or unpaid toll text? Open the official app or website yourself. Check parking QR codes too: someone may have stuck a fake code over the real one.</span></label></li>
-</ul>
+<header>
+  <div class="brand"><span class="flower" aria-hidden="true">✿</span> Diwali Digital Safety</div>
+  <h1>Family safety checklist</h1>
+  <p>Six small steps to help keep your family safe online.</p>
+</header>
+<section aria-labelledby="spot-scams">
+  <h2 id="spot-scams">When something feels suspicious</h2>
+  <ul class="rows">
+    <li><label><input type="checkbox"><span><span class="task">Hang up on threatening callers.</span><span class="detail">If someone claims to be the FBI, IRS, immigration or police and demands money, end the call. Look up the agency’s number yourself.</span></span></label></li>
+    <li><label><input type="checkbox"><span><span class="task">Never share a sign-in code.</span><span class="detail">Keep bank and WhatsApp verification codes private. Decline sign-in requests you didn’t make.</span></span></label></li>
+    <li><label><input type="checkbox"><span><span class="task">Call your family before sending money.</span><span class="detail">If a relative texts asking for urgent help, call their usual number to check—even if they say they have a new phone.</span></span></label></li>
+    <li><label><input type="checkbox"><span><span class="task">Open the app, not the link.</span><span class="detail">For delivery fees, tolls or parking payments, use the official app or website. Watch for fake QR codes.</span></span></label></li>
+  </ul>
 </section>
-<section>
-<h2>A few things to set up at home</h2>
-<ul class="rows">
-<li><label><input type="checkbox"><span><strong>Make your email harder to break into.</strong> In your account’s security settings, look for “Create a passkey.” If that isn’t available, turn on two-step verification. Save your recovery codes somewhere safe so you can get back in if you lose your phone.</span></label></li>
-<li><label><input type="checkbox"><span><strong>Freeze your credit with all three bureaus.</strong> It’s free, and it helps stop someone opening new credit accounts in your name. You can lift the freeze when you need to apply for credit. Still check your current accounts for charges you don’t recognize.</span></label></li>
-</ul>
-<ul class="bureaus" aria-label="Official credit freeze pages">
-<li><strong>Equifax</strong> · <a href="https://www.equifax.com/personal/credit-report-services/credit-freeze/">equifax.com/personal/credit-report-services/credit-freeze/</a></li>
-<li><strong>Experian</strong> · <a href="https://www.experian.com/help/credit-freeze/">experian.com/help/credit-freeze/</a></li>
-<li><strong>TransUnion</strong> · <a href="https://www.transunion.com/credit-freeze">transunion.com/credit-freeze</a></li>
-</ul></section>
-<section class="action">
-<h2>If you sent money or shared a code</h2>
-<p>Tell someone you trust. You don’t have to sort this out alone. Call your bank or payment service right away using the number on your card or in the app, and ask if it can stop the payment. If someone got into your account, open the service’s official recovery page, change your password and sign out other devices. Keep the messages and receipts.</p>
-<ul class="reports" aria-label="US reporting and recovery websites">
-<li><strong>Report a scam</strong> · <a href="https://reportfraud.ftc.gov/">ReportFraud.ftc.gov</a></li>
-<li><strong>Report an internet crime to the FBI</strong> · <a href="https://www.ic3.gov/">IC3.gov</a></li>
-<li><strong>Get an identity theft recovery plan</strong> · <a href="https://www.identitytheft.gov/">IdentityTheft.gov</a></li>
-</ul></section>
+<section aria-labelledby="at-home">
+  <h2 id="at-home">Two things to do at home</h2>
+  <ul class="rows">
+    <li><label><input type="checkbox"><span><span class="task">Secure your main email account.</span><span class="detail">Set up a passkey or two-step verification. Save recovery codes somewhere safe in case you lose your phone.</span></span></label></li>
+    <li><label><input type="checkbox"><span><span class="task">Freeze your credit for free.</span><span class="detail">Freeze it separately at all three bureaus. You can temporarily lift a freeze when applying for credit. Keep checking your existing accounts.</span></span></label></li>
+  </ul>
+  <p class="links-heading">Official credit freeze pages</p>
+  <ul class="bureaus" aria-label="Official credit freeze pages">
+    <li><a href="https://www.equifax.com/personal/credit-report-services/credit-freeze/">Equifax</a></li>
+    <li><a href="https://www.experian.com/help/credit-freeze/">Experian</a></li>
+    <li><a href="https://www.transunion.com/credit-freeze">TransUnion</a></li>
+  </ul>
+</section>
+<section class="action" aria-labelledby="if-scammed">
+  <h2 id="if-scammed">If you sent money or shared a code</h2>
+  <p>Call your bank or payment service right away using its official number and ask whether it can stop the payment. If someone accessed your account, change your password and sign out other devices. Save messages and receipts.</p>
+  <p>Tell someone you trust. You don’t have to handle it alone.</p>
+  <ul class="reports" aria-label="US reporting and recovery websites">
+    <li><a href="https://reportfraud.ftc.gov/">Report a scam to the FTC</a></li>
+    <li><a href="https://www.ic3.gov/">Report internet crime to the FBI</a></li>
+    <li><a href="https://www.identitytheft.gov/">Get identity theft recovery help</a></li>
+  </ul>
+</section>
 <footer>Scam or Safe? Protect Your Family · Community outreach · November 14, 2026</footer>
 </main>
-</body></html>
+</body>
+</html>
